@@ -72,48 +72,6 @@ public void SetUserName(String UserName) {
   public void Print()
   {
 	  System.out.println("User's Info : ");
-	  System.out.print(this.UserName+", "+this.Password+", "+this.Email+", "+this.Address);
+	  System.out.print(this.UserName+", "+this.Password+", "+this.Email+", "+this.Address+", "+this.Age);
   }
-
-  
-
-public String getUserName() {
-	return UserName;
-}
-
-public void setUserName(String userName) {
-	UserName = userName;
-}
-
-public String getPassword() {
-	return Password;
-}
-
-public void setPassword(String password) {
-	Password = password;
-}
-
-public String getEmail() {
-	return Email;
-}
-
-public void setEmail(String email) {
-	Email = email;
-}
-
-public Integer getAge() {
-	return Age;
-}
-
-public void setAge(int age) {
-	Age = age;
-}
-
-public String getAddress() {
-	return Address;
-}
-
-public void setAddress(String address) {
-	Address = address;
-}
 }

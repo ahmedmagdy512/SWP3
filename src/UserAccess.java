@@ -17,7 +17,7 @@ public class UserAccess {
 	  for(int i=0; i<U.size();i++)
 	  {
 		  User u=U.get(i);
-		  if(u.getEmail()==Email)
+		  if(u.GetEmail()==Email)
 		  {
 			  u.Print();
 			  break;
@@ -36,10 +36,15 @@ public class UserAccess {
 	   String e;
 	   Integer a;
 	   String addr; 
-	   un=sc.next();
-	   p=sc.next();
-	   e=sc.next();
-	   addr=sc.next();
+	   System.out.print("UserName : ");
+	   un=sc.nextLine();
+	   System.out.print("Password : ");
+	   p=sc.nextLine();
+	   System.out.print("Email : ");
+	   e=sc.nextLine();
+	   System.out.print("Address : ");
+	   addr=sc.nextLine();
+	   System.out.print("Age : ");
 	   a=sc.nextInt();
 	   u.SetUserName(un);
 	   u.SetAddress(addr);
@@ -51,8 +56,7 @@ public class UserAccess {
 	   BufferedWriter writer = new BufferedWriter(new FileWriter("Users.txt",true));
 	   writer.append(un+"$"+p+"$"+e+"$"+a+"$"+addr);
 	   writer.append('\n');
-	     
-	    writer.close();
+	   writer.close();
 	
   }
 
