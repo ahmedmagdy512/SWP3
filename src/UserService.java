@@ -13,11 +13,16 @@ public class UserService {
 		   String e;
 		   Integer a;
 		   String addr; 
-		   un=sc.next();
-		   p=sc.next();
-		   e=sc.next();
-		   a=sc.nextInt();
+		   System.out.print("UserName : ");
+		   un=sc.nextLine();
+		   System.out.print("Password : ");
+		   p=sc.nextLine();
+		   System.out.print("Email : ");
+		   e=sc.nextLine();
+		   System.out.print("Address : ");
 		   addr=sc.nextLine();
+		   System.out.print("Age : ");
+		   a=sc.nextInt();
 		   u.SetUserName(un);
 		   u.SetAddress(addr);
 		   u.SetAge(a);
@@ -32,16 +37,20 @@ public class UserService {
 	  String un,pwd;
 	  System.out.print("Enter the username and password : \n");
 	  Scanner sc=new Scanner(System.in);
-	  un=sc.next();
+	  un=sc.nextLine();
 	  pwd=sc.next();
 	  for(int i=0; i<UA.U.size();i++)
 	  {
 		  User x=UA.U.get(i);
-		  x.Print();
-		  if(x.GetUserName()==un && x.GetPassword()==pwd)
+		  if(x.GetUserName().equals(un) &&  x.GetPassword().equals(pwd))
 		  {
-			 Curr=new User(x);
-			 return true;
+			  Curr.SetUserName(x.GetUserName());
+			  Curr.SetAddress(x.GetAddress());
+			  Curr.SetAge(x.GetAge());
+			  Curr.SetEmail(x.GetEmail());
+			  Curr.SetPassword(x.GetPassword());
+			  Curr.setU(x.getU());
+			  return true;
 		  }
 	  }
 	  System.out.println("Invalid username or password");
@@ -55,14 +64,17 @@ public class UserService {
 	public boolean SearchItem(String name, PostAccess PA) 
 	{
 		boolean f=false;
-		ArrayList<Post> posts=new ArrayList<Post>();
 		for(int i=0;i<PA.P.size();i++)
 		{
-			Post post=PA.P.get(i);
-			if(post.GetTitle()==name)
+			if(PA.P.get(i).GetTitle().contains(name))
 			{
-				post.Print();
-				System.out.println(post.Create.Email);
+				System.out.println("Name : "+PA.P.get(i).GetItem().getName());
+				System.out.println("Category : "+PA.P.get(i).GetItem().getCategory());
+				System.out.println("HolderName : "+PA.P.get(i).GetItem().getHolderName());
+				System.out.println("Title : "+PA.P.get(i).GetTitle());
+				System.out.println("Description : "+PA.P.get(i).GetDesc());
+				System.out.println("Date : "+PA.P.get(i).GetDate());
+				System.out.println(PA.P.get(i).Create.Email);
 				f=true;
 			}
 		}

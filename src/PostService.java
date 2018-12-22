@@ -1,17 +1,17 @@
+import java.io.IOException;
 import java.util.Vector;
 
-public interface PostService {
+public class PostService {
 
-  public default void CreatePost(Post b,PostAccess PA)
+  public void CreatePost(Post b,User Curr,PostAccess PA) throws IOException
   {
-	PA.SavePost(b);
-	  
+	  PA.SavePost(b,Curr);
   }
-
+/*
   public Boolean DeletePost();
 
   public Post ViewPost();
 
-  public Post EditPost();
+  public Post EditPost();*/
 
 }
